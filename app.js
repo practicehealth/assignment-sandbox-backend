@@ -7,6 +7,7 @@ import { createCategoryRoutes } from "./routes/categories.js";
 import { routes, table } from "./routes/routes.js";
 import { createResourceRoutes } from "./routes/resources.js";
 import { loggerMiddleware } from "./middlewares/logger.js";
+import { notFoundMiddleware } from "./middlewares/erro-middlewares.js";
 
 const app = express();
 
@@ -30,7 +31,7 @@ app.use("/auth", createAuthRoutes());
 app.use("/categories", authenticateToken, createCategoryRoutes());
 app.use("/visits", authenticateToken, createVisitRotues());
 app.use("/resources", authenticateToken, createResourceRoutes());
-
+app.use(notFoundMiddleware);
 const port = 3000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port} with routes `);
