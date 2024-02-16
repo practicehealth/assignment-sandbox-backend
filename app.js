@@ -1,13 +1,14 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { authenticateToken, createAuthRoutes } from "./routes/auth.js";
+import { createAuthRoutes } from "./routes/auth.js";
+import { authenticateToken } from "./middlewares/authenticate-middleware.js";
 import { createVisitRotues } from "./routes/timeline.js";
 import { createCategoryRoutes } from "./routes/categories.js";
 import { routes, table } from "./routes/routes.js";
 import { createResourceRoutes } from "./routes/resources.js";
 import { loggerMiddleware } from "./middlewares/logger.js";
-import { notFoundMiddleware } from "./middlewares/erro-middlewares.js";
+import { notFoundMiddleware } from "./middlewares/error-middlewares.js";
 
 const app = express();
 

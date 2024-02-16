@@ -1,10 +1,6 @@
 import { Router } from "express";
 import jwt from "jsonwebtoken";
-
-const tokenSecrets = {
-  accessToken: "accessTokenSecret",
-  refreshToken: "refreshTokenSecret",
-};
+import { tokenSecrets } from "../constants.js";
 
 const availableEmails = ["abdul@gmail.com", "randal@gmail.com"];
 
@@ -50,26 +46,3 @@ export function createAuthRoutes() {
   // anything below these routes will require the accessToken to be in the header
   return router;
 }
-
-export const authenticateToken = (req, res, next) => {
-  const authHeader = req.headers["authorization"];
-  const token = authHeader && authHeader.split(" ")[1];
-  if (!token) {
-    console.log(
-      "access token not found for protected rotue\n------------------"
-    );
-    return res.status(401).json({ message: "Access token not found" });
-  }
-  jwt.verify(token, tokenSecrets.accessToken, (err, user) => {
-    if (err) {
-      console.log(
-        "access token is tampered or expired send a new one\n------------------"
-      );
-      return res.status(401).json({
-        message: "Access token is either tampered or expired, send a new one",
-      });
-    }
-    req.user = user;
-    next();
-  });
-};
