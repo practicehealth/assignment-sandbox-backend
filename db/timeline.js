@@ -1,4 +1,4 @@
-{
+export default {
   "abdul@gmail.com": [
     {
       "_id": "65cf3ff2915dbdf8c4b984d2",

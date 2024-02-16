@@ -1,6 +1,6 @@
-import categories from "./categories.json" assert { type: "json" };
-import visits from "./timeline.json" assert { type: "json" };
-import resouces from "./resources.json" assert { type: "json" };
+import categories from "./categories.js";
+import visits from "./timeline.js";
+import resouces from "./resources.js";
 class DB {
   constructor() {
     this.categories = categories;
