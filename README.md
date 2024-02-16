@@ -127,3 +127,15 @@ The server will be running on `http://localhost:3000`. You can use the following
 - Description: This route is used to get all the documents linked in the visit objects
 - Headers:
   - Authorization: Bearer <accessToken>
+
+
+
+### Notes:
+- all routes for getting data are protected and require a valid access token to be passed in authorization header
+- to get an accessToken you need to have a refresh token in your cookie which you can get by logging in
+- currently only two users already exist in db with the following emails
+  - `abdul@gmail.com`
+  - `randal@email.com`
+- there's no password
+- to get data from a differnt user logout and login again with a different email 
+- To reset the data and start fresh just restart the server by killing the current process and writing ``` npm start``` in the terminal again.
