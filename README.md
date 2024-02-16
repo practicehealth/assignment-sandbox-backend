@@ -4,14 +4,6 @@
 
 This is a sandbox backend for the assignment. It is a simple REST API that allows you to do a simple login and fetch data for your flutter/react application
 
-## Installation
-
-# Sandbox Backend for Assignment
-
-## Description
-
-This is a sandbox backend for the assignment. It is a simple REST API that allows you to do a simple login and fetch data for your flutter/react application
-
 ## Prerequisites
 
 Before getting started, make sure you have Node 18+ installed. You can download it from the official Node.js site [here](https://nodejs.org).
