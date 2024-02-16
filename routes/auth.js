@@ -62,7 +62,6 @@ export const authenticateToken = (req, res, next) => {
       return res.status(403).json({ message: "Invalid access token" });
     }
     req.user = user;
-    console.log(req.user);
     next();
   });
 };
