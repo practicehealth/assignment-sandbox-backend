@@ -1,6 +1,6 @@
-import categories from "./categories.js";
-import visits from "./timeline.js";
-import resouces from "./resources.js";
+import categories from "./data/categories.js";
+import visits from "./data/timeline.js";
+import resouces from "./data/resources.js";
 class DB {
   constructor() {
     this.categories = categories;
